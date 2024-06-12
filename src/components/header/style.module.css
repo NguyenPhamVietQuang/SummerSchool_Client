@@ -1,0 +1,216 @@
+.container_fluid {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1920px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 66px;
+    max-width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 700;
+    border-bottom: 1px solid rgba(0, 175, 171, 0.3);
+    background-color: transparent;
+    transition: background-color 0.2s, color 0.2s;
+    z-index: 1051;
+}
+
+.header.scrolled {
+    background-color: white;
+    color: black;
+}
+
+.header.scrolled .nav a,
+.header.scrolled .nav span,
+.header.scrolled .header_btn_login,
+.header.header.scrolled .header_logo {
+    color: black;
+}
+
+.header.scrolled .hamburger .line {
+    background-color: black;
+}
+
+.header_logo,
+.header_btn_login {
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--bg-cl);
+}
+.nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+}
+.nav_ul {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 100%;
+}
+.nav_li {
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    display: flex;
+    height: 100%;
+}
+.nav_li:hover > .nav_submenu {
+    opacity: 1;
+    visibility: visible;
+}
+.nav_li span,
+.nav_li a {
+    align-items: center;
+    color: #fff;
+    display: flex;
+    font-size: 18px;
+    padding: 8px 15px;
+    text-transform: capitalize;
+    white-space: nowrap;
+    gap: 6px;
+}
+.nav_li:hover > span,
+.nav_li:hover > a,
+.nav_submenu li:hover > a {
+    color: var(--secondary-cl) !important;
+}
+.nav_submenu {
+    background: #fff;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.1);
+    left: 50%;
+    opacity: 0;
+    visibility: hidden;
+    padding: 10px 0;
+    position: absolute;
+    top: 65px;
+    transform: translateX(-50%);
+    transition: 0.3s;
+}
+.nav_submenu li a {
+    font-weight: 500;
+    color: var(--primary-cl);
+}
+.header_btn_login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.header_username{
+    text-transform: capitalize;
+}
+/* close hambuger */
+
+@media screen and (max-width: 767.98px) {
+    .header {
+        height: 50px;
+    }
+    .header_username {
+        font-size: 16px;
+    }
+    /* hamburger */
+    #hamburger {
+        display: none;
+    }
+    .hamburger .line {
+        width: 30px;
+        height: 3px;
+        background-color: #fff;
+        display: block;
+        margin: 8px auto;
+        -webkit-transition: all 0.3s ease-in-out;
+        -o-transition: all 0.3s ease-in-out;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .hamburger:hover {
+        cursor: pointer;
+    }
+
+    body.body_active {
+        height: 100vh;
+        overflow: hidden;
+    }
+    body.body_active .header #hamburger .line:nth-child(2) {
+        opacity: 0;
+    }
+
+    body.body_active .header #hamburger .line:nth-child(1) {
+        -webkit-transform: translateY(11px) rotate(45deg);
+        -ms-transform: translateY(11px) rotate(45deg);
+        -o-transform: translateY(11px) rotate(45deg);
+        transform: translateY(11px) rotate(45deg);
+    }
+
+    body.body_active .header #hamburger .line:nth-child(3) {
+        -webkit-transform: translateY(-11px) rotate(-45deg);
+        -ms-transform: translateY(-11px) rotate(-45deg);
+        -o-transform: translateY(-11px) rotate(-45deg);
+        transform: translateY(-11px) rotate(-45deg);
+    }
+    #hamburger {
+        display: block;
+    }
+    .nav {
+        background-color: #f4f7f6;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        padding: 0;
+        margin-top: 50px;
+        width: 100%;
+        width: 100%;
+        transform: translateX(-100%);
+        transition: transform 0.3s;
+    }
+    .header_left {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        height: 100%;
+    }
+    .header_left,
+    .header_btn_login {
+        z-index: 2;
+        /* color: var(--primary-cl) */
+    }
+
+    .nav_submenu {
+        display: none;
+    }
+    .nav_ul {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-items: flex-start;
+        height: unset;
+        gap: unset;
+        width: 100%;
+    }
+    body.body_active .header nav {
+        transform: translateX(0);
+        transition: transform 0.3s;
+    }
+
+    .nav_li {
+        width: 100%;
+        border-bottom: 1px solid #e3e3e3;
+    }
+    .nav_li a,
+    .nav_li span {
+        width: 100%;
+        padding: 24px 20px;
+        color: var(--primary-cl);
+    }
+}

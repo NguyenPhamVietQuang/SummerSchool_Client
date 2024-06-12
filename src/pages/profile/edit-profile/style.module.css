@@ -1,0 +1,39 @@
+.button {
+    width: max-content;
+    margin-left: auto;
+}
+
+.form_input {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.rowInput {
+    display: flex;
+    gap: 24px;
+}
+
+.edit_profile_head {
+    border-bottom: 1px solid var(--border-gray);
+    padding: 16px 24px;
+}
+.edit_profile_head p {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 28px;
+}
+.account_page_body {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    height: 100%;
+}
+@media screen and (max-width: 767.98px) {
+    .rowInput {
+        flex-direction: column;
+        /* gap: 16px; */
+    }
+    /* .form_input {
+    gap: 16px;
+  } */
+}

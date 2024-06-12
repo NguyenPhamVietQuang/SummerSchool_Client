@@ -1,0 +1,30 @@
+.form_ava {
+    width: 128px;
+    height: 128px;
+    min-width: 128px;
+    min-height: 128px;
+    position: relative;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 100px;
+}
+.form_ava img {
+    border-radius: 100px;
+    /* border: 1px solid var(--secondary-cl); */
+    border-radius: 100px;
+    overflow: hidden;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.form_edit {
+    position: absolute;
+    z-index: 2;
+    background-color: var(--secondary-cl);
+    padding: 4px;
+    border-radius: 100px;
+    right: 0px;
+    bottom: 0;
+    border: 2px solid var(--white);
+    margin: 2px;
+}

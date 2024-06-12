@@ -1,0 +1,78 @@
+.profile_his_list {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.profile_his_item {
+    display: flex;
+    align-items: center;
+}
+.his_item_img {
+    width: 50%;
+    border-radius: 16px;
+    overflow: hidden;
+}
+.his_item_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 16/9;
+}
+.his_content {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 50%;
+    padding: 24px;
+    background-color: var(--white);
+}
+.his_name {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.his_course_info {
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.his_author {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    line-height: 1.3;
+}
+.his_author p {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.not_register {
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    color: var(--text-gray);
+}
+@media screen and (max-width: 767.98px) {
+    .not_register {
+        font-size: 18px;
+    }
+    .profile_his_item {
+        flex-direction: column;
+    }
+    .his_item_img,
+    .his_content {
+        width: 100%;
+    }
+}
