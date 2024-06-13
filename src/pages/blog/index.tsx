@@ -12,6 +12,7 @@ import Link from "next/link";
 import { Seo } from "@/components";
 import { useRouter } from "next/router";
 import { imgs } from "@/assets/imgs";
+import markdownit from "markdown-it";
 
 const Blog: NextPageWithLayout = () => {
     const baseUrl = process.env.NEXT_PUBLIC_URL;
@@ -19,7 +20,11 @@ const Blog: NextPageWithLayout = () => {
         populate: "*",
     };
     const router = useRouter();
-
+    const md = markdownit({
+        html: true,
+        linkify: true,
+        typographer: true,
+    });
     const { data: blog } = useQuery({
         queryKey: [QR_KEY.BLOG],
         queryFn: () => blogApi.getBlog({ params }),
@@ -79,9 +84,21 @@ const Blog: NextPageWithLayout = () => {
                                     <h2 className={style.blog_item_name}>
                                         {item?.attributes?.title}
                                     </h2>
-                                    <p className={style.blog_item_desc}>
+                                    {/* <p className={style.blog_item_desc}>
                                         {item?.attributes?.content}
-                                    </p>
+                                    </p> */}
+                                    <p
+                                        dangerouslySetInnerHTML={{
+                                            __html:
+                                                md.render(
+                                                    `${
+                                                        item?.attributes?.content ??
+                                                        "<p>Đang cập nhật</p>"
+                                                    }`
+                                                ) || "",
+                                        }}
+                                        className={style.blog_item_desc}
+                                    />
                                     <p className={style.blog_item_create}>
                                         {dayjs(
                                             item?.attributes?.createdAt

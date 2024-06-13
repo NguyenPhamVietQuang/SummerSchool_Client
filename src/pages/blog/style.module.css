@@ -55,7 +55,8 @@
     text-overflow: ellipsis;
     word-break: break-word;
     line-height: 1.5;
-    font-weight: 500;
+    font-weight: 300;
+    font-size: 11px;
 }
 .blog_item_create {
     font-weight: bold;
@@ -104,7 +105,7 @@
         gap: 14px;
     }
     .blog_item_name {
-        font-size: 18px;
+        font-size: 12px;
         line-height: 1.3;
     }
 }
